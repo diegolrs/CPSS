@@ -1,0 +1,15 @@
+#include "Material/Metal"
+
+class Item
+{
+	public:
+	   Item(float value, Metal metal)
+	   { 
+		   value = metal.getValue();
+	   }
+
+	   float getValue()
+	   { 
+		   return value;
+	   }
+};

@@ -1,0 +1,29 @@
+[in:int; out:int]
+[in:float; out:float]
+def mult5(x) do : x * 5
+
+Se torna:
+int mult5(int x) { return int(x*5); }
+float mult5(float x) { return float(x*5); }
+
+-----------------------
+[in:int,int; out:int]
+def mult(x,y) do : x*y
+Se torna:
+int mult(int x, int y) { return x*y; }
+
+-------------------
+[in:int; out:int] 
+def soma_rec(a, 0), do: a
+def soma_rec(a, b), do: 1 + soma_rec(a, b - 1)
+
+Se torna:
+int soma_rec(a, b)
+{
+  if (b == 0)
+    return a;
+  else 
+    return 1 + soma_rec(a, b-1);
+}
+
+
