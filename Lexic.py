@@ -11,6 +11,7 @@ class Lexic:
         self.parentesis = {14,15}
         self.braces = {16,17}
         self.identifier = {18}
+        self.getset = {25}
 
         self.word_verified = "" #uptate when complete to verify a word
         self.output = []
@@ -45,6 +46,8 @@ class Lexic:
                 self.current_state = 16
             elif symbol == '}':
                 self.current_state = 17
+            elif symbol == 'g':
+                self.current_state = 20
             else:
                 self.current_state = 18
 
@@ -55,6 +58,10 @@ class Lexic:
         #class
         elif self.current_state in [9,10,11,12,13]:
             self.process_class(symbol)
+
+        #getset
+        elif self.current_state in [20,21,22,23,24,25]:
+            self.process_getset(symbol)
 
         #(){}
         elif self.current_state in [14,15,16,17]:
@@ -75,6 +82,8 @@ class Lexic:
             return TokenClassf.PARENTESIS
         elif self.current_state in self.braces:
             return TokenClassf.BRACES
+        elif self.current_state in self.getset:
+            return TokenClassf.GETSET
         elif self.current_state in self.identifier:
             return TokenClassf.IDENTIFIER
         return TokenClassf.INVALID
@@ -138,5 +147,16 @@ class Lexic:
             self.current_state = 12
         elif self.current_state == 12 and symbol == 's':
             self.current_state = 13
+        else:
+            self.current_state = 18
+
+    def process_getset(self, symbol):
+        init = 20 #after g
+        quote = 'etset'
+
+        if symbol in self.ignorables:
+            self.crash(symbol)
+        elif quote[self.current_state-init] == symbol:
+            self.current_state += 1
         else:
             self.current_state = 18

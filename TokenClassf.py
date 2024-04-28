@@ -7,3 +7,4 @@ class TokenClassf(Enum):
     INCLUDE = 2
     PARENTESIS = 3
     BRACES = 4
+    GETSET = 5

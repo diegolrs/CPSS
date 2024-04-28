@@ -17,4 +17,4 @@ lexic = Lexic()
 file_handler = FileHandler()
 generator = Generator(file_handler)
 
-generate(generator, lexic, 'code2.cppss')
+generate(generator, lexic, 'Item.cppss')
