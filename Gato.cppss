@@ -1,0 +1,15 @@
+#include "Animal"
+#include <string>
+
+class Gato : Animal
+{
+    private:
+        getset std::string nome;
+        getset int idade;
+        getset Cor cor;
+    public:
+        std::string FazSom()
+        {
+            return "Miau";
+        }
+};

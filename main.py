@@ -11,7 +11,7 @@ lexic = Lexic()
 parser = Parser()
 file_handler = FileHandler()
 generator = Generator(file_handler)
-cppss_file_addr = 'Material.cppss'
+cppss_file_addr = 'Gato.cppss'
 
 program = file_handler.read(cppss_file_addr)
 lexic_output = lexic.generate_output(program)   

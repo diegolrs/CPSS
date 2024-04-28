@@ -63,10 +63,10 @@ class GetSetHandler:
         for method in methods:
             #get
             __str += f'\n\n{method[0]} {class_name}::get{method[1].capitalize()}()'
-            __str += '{ return this.' + f'{method[1]};'+' }' 
+            __str += '{ return this->' + f'{method[1]};'+' }' 
 
             #set
             __str += f'\n\nvoid {class_name}::set{method[1].capitalize()}({method[0]} {method[1]})'
-            __str += '{ this.' + f'{method[1]} = {method[1]};'+' }' 
+            __str += '{ this->' + f'{method[1]} = {method[1]};'+' }' 
 
         return cpp_code.strip() + __str

@@ -2,10 +2,10 @@
 
 class Item
 {
-	public:
+	private:
 		getset float value;
 		getset int test;
-
+	public:
 	   Item(float value, Metal metal)
 	   { 
 		   value = metal.getValue();

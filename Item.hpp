@@ -3,10 +3,10 @@
 
 class Item
 {
-	public:
+	private:
 		float value;
 		int test;
-
+	public:
 	   Item(float value, Metal metal);
 	public:
 		float getValue();
