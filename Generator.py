@@ -87,23 +87,15 @@ class Generator:
                 while program[i] != ')':
                     hpp_code += program[i]
                     i += 1
-                hpp_code += program[i] + ';'
                 i += 1
+                hpp_code += ');'
 
-                while program[i] != '{':
+                if program[i] != ';':
+                    while program[i] != '{':
+                        i += 1
+                    while program[i] != '}':
+                        i += 1
                     i += 1
-                while program[i] != '}':
-                    i += 1
-                i += 1    
-
-                #formatting
-                count = 0
-                while program[i] in ['\n']:
-                    i += 1
-                    count += 1
-                if count > 0:
-                    hpp_code += '\n'
-
             else:
                 hpp_code += program[i]
                 i += 1

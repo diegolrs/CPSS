@@ -1,0 +1,20 @@
+#include <string>
+
+class Material
+{
+	public:
+       Material(){}
+       Material(std::string name)
+       {
+           this.name = name;
+       }
+       Material(std::string name, int id)
+       {
+           this.name = name;
+           this.id = id;
+       }
+       Material(){}
+    private:
+        std::string name;
+        int id;
+};
