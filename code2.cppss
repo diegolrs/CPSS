@@ -3,13 +3,11 @@
 class Item
 {
 	public:
+		getset float value;
+		getset int test;
+
 	   Item(float value, Metal metal)
 	   { 
 		   value = metal.getValue();
-	   }
-
-	   float getValue()
-	   { 
-		   return value;
 	   }
 };
